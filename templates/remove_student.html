@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Remove Student - {{ cls }}</h2>
+
+<form method="post">
+    <select name="student_id">
+        {% for s in students %}
+            <option value="{{ s.student_id }}">{{ s.student_id }} - {{ s.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Remove</button>
+</form>
+
+{% endblock %}

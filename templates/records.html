@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Attendance Records - {{ cls }}</h2>
+
+<!-- Date filter form -->
+<form method="post" style="margin-bottom: 20px;">
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" name="date" value="{{ chosen_date if chosen_date else '' }}">
+    <button class="form-button" type="submit">Search</button>
+</form>
+
+<!-- Attendance table -->
+<table border="1" cellpadding="6">
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Status</th>
+    </tr>
+
+    {% if records %}
+        {% for r in records %}
+        <tr>
+            <td>{{ r.student_id }}</td>
+            <td>{{ r.name }}</td>
+            <td>{{ r.status if r.status else '-' }}</td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="3" style="text-align:center;">No records found for this date.</td>
+        </tr>
+    {% endif %}
+</table>
+
+{% endblock %}

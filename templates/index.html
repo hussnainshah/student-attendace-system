@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>Student Attendance System</h1>
+    </nav>
+    <div class="menu-grid">
+    <a href="{{ url_for('new_student') }}"><button><i>Add New Student</i></button></a>
+    <a href="{{ url_for('select_class', action='attendance') }}"><button><i>Mark Attendance</i></button></a>
+    <a href="{{ url_for('select_class', action='records') }}"><button><i>View Records</i></button></a>
+    <a href="{{ url_for('select_class', action='remove') }}"><button><i>Remove Student</i></button></a>
+</div>
+
+
+</body>
+</html>

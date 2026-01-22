@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Attendance</h2>
+
+<form method="post" class="attendance-form">
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" value="{{ today }}" required>
+    <br><br>
+
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th class="col-id">ID</th>
+                <th class="col-name">Name</th>
+                <th class="col-status">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in students %}
+            <tr>
+                <td class="col-id">{{ s.student_id }}</td>
+                <td class="col-name">{{ s.name }}</td>
+                <td class="col-status">
+                    <label class="status-label">
+                        <input type="radio" name="status_{{ s.student_id }}" value="Present" required>
+                        Present
+                    </label>
+                    <label class="status-label">
+                        <input type="radio" name="status_{{ s.student_id }}" value="Absent">
+                        Absent
+                    </label>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <button class="form-button" type="submit">Save Attendance</button>
+
+</form>
+
+{% endblock %}
