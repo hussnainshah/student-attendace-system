@@ -1,3 +1,30 @@
+# Student Attendance System
+
+The Student Attendance System is a web-based application designed to efficiently manage student attendance across multiple classes. Built using the Flask framework and SQLite for data storage, the system provides an organized interface for managing students, classes, and attendance records, with a focus on simplicity, accuracy, and reliability.
+
+---
+
+## Features
+
+### **1. Class Management**
+
+The system supports multiple classes, such as Year 1 through Year 4. Users can view a list of all available classes and select a class to view or manage students and attendance records. Each class operates independently, ensuring that attendance tracking is accurate and organized. This design allows for easy expansion if more classes are added in the future.
+
+### **2. Student Management**
+
+Students can be added or removed from the system under their respective classes. Each student record includes a unique ID, a name, and the assigned class. Duplicate entries are prevented to maintain data integrity. Removing students is controlled through a dropdown selection to avoid accidental deletions. All student information is securely stored in the SQLite database.
+
+### **3. Attendance Marking**
+
+Attendance can be marked for a selected date. Each student in the class is listed in a tabular format with options to select their status: Present, Absent, or Leave. The system automatically checks for existing records to prevent duplicates and ensures that all updates are accurately recorded. Attendance data is stored with the student ID and date, providing a comprehensive history for reporting and tracking purposes.
+
+### **4. Attendance Viewing**
+
+The system allows users to view attendance records by class and date. Users can filter records to check attendance for specific days or generate a history overview for the entire class. The interface presents data in a clear tabular format, showing student names and their corresponding attendance status. Missing or empty records are handled gracefully with user-friendly error messages.
+
+### **5. Data Validation and Error Handling**
+
+All input forms are validated to ensure accurate data entry. Duplicate student IDs are automatically rejected, and the system prevents the submission of incomplete forms. Database errors and missing records are managed with informative messages to the user. This ensures reliability and prevents data inconsistencies.
 
 ---
 
